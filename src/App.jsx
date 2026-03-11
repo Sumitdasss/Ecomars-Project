@@ -2,7 +2,9 @@
 import './App.css'
 import Heading from './Componatns/Layouts/Heading'
 import { Layoutone } from './Componatns/Layouts/Layoutone'
+import Layouttwo from './Componatns/Layouts/Layouttwo'
 import Navbartwo from './Componatns/Layouts/Navbartwo'
+import Sliderlayout from './Componatns/Layouts/Sliderlayout'
 
 function App() {
   
@@ -11,6 +13,8 @@ function App() {
    <Heading/>
    <Navbartwo/>
    <Layoutone/>
+   <Layouttwo/>
+   <Sliderlayout/>
    </>
   )
 }
