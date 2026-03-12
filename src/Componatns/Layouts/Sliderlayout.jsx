@@ -1,10 +1,15 @@
-import React from 'react'
+
 import Container from '../Common/Container'
 import { FaPlus,FaMinus,FaCodeCompare,FaCartShopping } from "react-icons/fa6";
 import { FaHeart } from "react-icons/fa";
+import React, { useState } from 'react';
 
 const Sliderlayout = () => {
 
+  const [isOpen1, setIsOpen1] = useState(false);
+    const [isOpen2, setIsOpen2] = useState(false);
+    const [isOpen3, setIsOpen3] = useState(false);
+    const [isOpen4, setIsOpen4] = useState(false);
     
   return (
 
@@ -15,25 +20,25 @@ const Sliderlayout = () => {
             <div className="h-[465px] w-[350px] rounded-[10px] relative ">
                 <div className="bg-[url(/src/assets/2.png)] w-full h-[370px] bg-cover bg-no-repeat bg-center">
                 <div className="px-7 py-3 bg-[#262626] text-[16px] font-semibold text-white inline-block mt-[15px] ml-[15px]">New</div>
-                  <div class="relative flex items-center ">
+                  <div className="relative flex items-center ">
   
   <div className="relative flex items-center justify-center mt-[240px] ml-[280px]">
     
-    <button id="opt1" class="absolute h-11 w-11 text-[#5B5F77] focus:text-red-600 text-[24px]  rounded-full bg-white shadow-lg flex items-center justify-center transition-all duration-500 scale-0">
+    <button id="opt1" className={`absolute h-11 w-11 text-[#5B5F77] focus:text-red-600 text-[24px]  rounded-full bg-white shadow-lg flex items-center justify-center transition-all duration-500 scale-0 ${isOpen1 ? '-translate-y-16 scale-100 opacity-100' : 'scale-0 opacity-0 pointer-events-none'}`}>
      <FaHeart/>
     </button>
     
-    <button id="opt2" class="absolute h-11 w-11 text-[#5B5F77] focus:text-red-600 text-[24px]  rounded-full bg-white shadow-lg flex items-center justify-center transition-all duration-500 scale-0">
+    <button id="opt2" className={`absolute h-11 w-11 text-[#5B5F77] focus:text-red-600 text-[24px]  rounded-full bg-white shadow-lg flex items-center justify-center transition-all duration-500 scale-0 ${isOpen1 ? '-translate-y-32 scale-100 opacity-100' : 'scale-0 opacity-0 pointer-events-none'}`}>
       <FaCodeCompare />
     </button>
     
-    <button id="opt3" class="absolute h-11 w-11 text-[#5B5F77] focus:text-red-600 text-[24px]  rounded-full bg-white shadow-lg flex items-center justify-center transition-all duration-500 scale-0">
+    <button id="opt3" className={`absolute h-11 w-11 text-[#5B5F77] focus:text-red-600 text-[24px]  rounded-full bg-white shadow-lg flex items-center justify-center transition-all duration-500 scale-0 ${isOpen1 ? '-translate-y-48 scale-100 opacity-100' : 'scale-0 opacity-0 pointer-events-none'}`}>
       <FaCartShopping/>
     </button>
     
     
-    <button id="mainBtn" class="relative z-10 h-11 w-11 bg-[#262626] flex items-center justify-center text-white rounded-full shadow-2xl font-bold transition-transform active:scale-90">
-      <FaPlus/>
+    <button onClick={() => setIsOpen1(!isOpen1)} id="mainBtn" className="relative z-10 h-11 w-11 bg-[#262626] flex items-center justify-center text-white rounded-full shadow-2xl font-bold transition-transform active:scale-90">
+    {isOpen1 ? <FaMinus size={18} /> : <FaPlus size={18} />}
     </button>
     
   </div>
@@ -55,25 +60,25 @@ const Sliderlayout = () => {
              <div className="h-[465px] w-[350px] rounded-[10px] relative ">
                 <div className="bg-[url(/src/assets/3.png)] w-full h-[370px] bg-cover bg-no-repeat bg-center">
                    <div className="px-7 py-3 bg-[#262626] text-[16px] font-semibold text-white inline-block mt-[15px] ml-[15px]">New</div>
-                  <div class="relative flex items-center ">
+                  <div className="relative flex items-center ">
   
   <div className="relative flex items-center justify-center mt-[240px] ml-[280px]">
     
-    <button id="opt1" class="absolute h-11 w-11 text-[#5B5F77] focus:text-red-600 text-[24px]  rounded-full bg-white shadow-lg flex items-center justify-center transition-all duration-500 scale-0">
+    <button id="opt1" className={`absolute h-11 w-11 text-[#5B5F77] focus:text-red-600 text-[24px]  rounded-full bg-white shadow-lg flex items-center justify-center transition-all duration-500 scale-0 ${isOpen2 ? '-translate-y-16 scale-100 opacity-100' : 'scale-0 opacity-0 pointer-events-none'}`}>
      <FaHeart/>
     </button>
     
-    <button id="opt2" class="absolute h-11 w-11 text-[#5B5F77] focus:text-red-600 text-[24px]  rounded-full bg-white shadow-lg flex items-center justify-center transition-all duration-500 scale-0">
+    <button id="opt2" className={`absolute h-11 w-11 text-[#5B5F77] focus:text-red-600 text-[24px]  rounded-full bg-white shadow-lg flex items-center justify-center transition-all duration-500 scale-0 ${isOpen2 ? '-translate-y-32 scale-100 opacity-100' : 'scale-0 opacity-0 pointer-events-none'}`}>
       <FaCodeCompare />
     </button>
     
-    <button id="opt3" class="absolute h-11 w-11 text-[#5B5F77] focus:text-red-600 text-[24px]  rounded-full bg-white shadow-lg flex items-center justify-center transition-all duration-500 scale-0">
+    <button id="opt3" className={`absolute h-11 w-11 text-[#5B5F77] focus:text-red-600 text-[24px]  rounded-full bg-white shadow-lg flex items-center justify-center transition-all duration-500 scale-0 ${isOpen2 ? '-translate-y-48 scale-100 opacity-100' : 'scale-0 opacity-0 pointer-events-none'}`}>
       <FaCartShopping/>
     </button>
     
     
-    <button id="mainBtn" class="relative z-10 h-11 w-11 bg-[#262626] flex items-center justify-center text-white rounded-full shadow-2xl font-bold transition-transform active:scale-90">
-      <FaPlus/>
+    <button onClick={() => setIsOpen2(!isOpen2)} id="mainBtn" className="relative z-10 h-11 w-11 bg-[#262626] flex items-center justify-center text-white rounded-full shadow-2xl font-bold transition-transform active:scale-90">
+    {isOpen2 ? <FaMinus size={18} /> : <FaPlus size={18} />}
     </button>
     
   </div>
@@ -92,25 +97,25 @@ const Sliderlayout = () => {
  <div className="h-[465px] w-[350px] rounded-[10px] relative ">
                 <div className="bg-[url(/src/assets/4.png)] w-full h-[370px] bg-cover bg-no-repeat bg-center">
                    <div className="px-7 py-3 bg-[#262626] text-[16px] font-semibold text-white inline-block mt-[15px] ml-[15px]">New</div>
-                  <div class="relative flex items-center ">
+                  <div className="relative flex items-center ">
   
   <div className="relative flex items-center justify-center mt-[240px] ml-[280px]">
     
-    <button id="opt1" class="absolute h-11 w-11 text-[#5B5F77] focus:text-red-600 text-[24px]  rounded-full bg-white shadow-lg flex items-center justify-center transition-all duration-500 scale-0">
+   <button id="opt1" className={`absolute h-11 w-11 text-[#5B5F77] focus:text-red-600 text-[24px]  rounded-full bg-white shadow-lg flex items-center justify-center transition-all duration-500 scale-0 ${isOpen3 ? '-translate-y-16 scale-100 opacity-100' : 'scale-0 opacity-0 pointer-events-none'}`}>
      <FaHeart/>
     </button>
     
-    <button id="opt2" class="absolute h-11 w-11 text-[#5B5F77] focus:text-red-600 text-[24px]  rounded-full bg-white shadow-lg flex items-center justify-center transition-all duration-500 scale-0">
+    <button id="opt2" className={`absolute h-11 w-11 text-[#5B5F77] focus:text-red-600 text-[24px]  rounded-full bg-white shadow-lg flex items-center justify-center transition-all duration-500 scale-0 ${isOpen3 ? '-translate-y-32 scale-100 opacity-100' : 'scale-0 opacity-0 pointer-events-none'}`}>
       <FaCodeCompare />
     </button>
     
-    <button id="opt3" class="absolute h-11 w-11 text-[#5B5F77] focus:text-red-600 text-[24px]  rounded-full bg-white shadow-lg flex items-center justify-center transition-all duration-500 scale-0">
+    <button id="opt3" className={`absolute h-11 w-11 text-[#5B5F77] focus:text-red-600 text-[24px]  rounded-full bg-white shadow-lg flex items-center justify-center transition-all duration-500 scale-0 ${isOpen3 ? '-translate-y-48 scale-100 opacity-100' : 'scale-0 opacity-0 pointer-events-none'}`}>
       <FaCartShopping/>
     </button>
     
     
-    <button id="mainBtn" class="relative z-10 h-11 w-11 bg-[#262626] flex items-center justify-center text-white rounded-full shadow-2xl font-bold transition-transform active:scale-90">
-      <FaPlus/>
+    <button onClick={() => setIsOpen3(!isOpen3)} id="mainBtn" className="relative z-10 h-11 w-11 bg-[#262626] flex items-center justify-center text-white rounded-full shadow-2xl font-bold transition-transform active:scale-90">
+    {isOpen3 ? <FaMinus size={18} /> : <FaPlus size={18} />}
     </button>
     
   </div>
@@ -129,25 +134,25 @@ const Sliderlayout = () => {
             <div className="h-[465px] w-[350px] rounded-[10px] relative ">
                 <div className="bg-[url(/src/assets/5.png)] w-full h-[370px] bg-cover bg-no-repeat bg-center">
                    <div className="px-7 py-3 bg-[#262626] text-[16px] font-semibold text-white inline-block mt-[15px] ml-[15px]">New</div>
-                  <div class="relative flex items-center ">
+                  <div className="relative flex items-center ">
   
   <div className="relative flex items-center justify-center mt-[240px] ml-[280px]">
     
-    <button id="opt1" class="absolute h-11 w-11 text-[#5B5F77] focus:text-red-600 text-[24px]  rounded-full bg-white shadow-lg flex items-center justify-center transition-all duration-500 scale-0">
+   <button id="opt1" className={`absolute h-11 w-11 text-[#5B5F77] focus:text-red-600 text-[24px]  rounded-full bg-white shadow-lg flex items-center justify-center transition-all duration-500 scale-0 ${isOpen4 ? '-translate-y-16 scale-100 opacity-100' : 'scale-0 opacity-0 pointer-events-none'}`}>
      <FaHeart/>
     </button>
     
-    <button id="opt2" class="absolute h-11 w-11 text-[#5B5F77] focus:text-red-600 text-[24px]  rounded-full bg-white shadow-lg flex items-center justify-center transition-all duration-500 scale-0">
+    <button id="opt2" className={`absolute h-11 w-11 text-[#5B5F77] focus:text-red-600 text-[24px]  rounded-full bg-white shadow-lg flex items-center justify-center transition-all duration-500 scale-0 ${isOpen4 ? '-translate-y-32 scale-100 opacity-100' : 'scale-0 opacity-0 pointer-events-none'}`}>
       <FaCodeCompare />
     </button>
     
-    <button id="opt3" class="absolute h-11 w-11 text-[#5B5F77] focus:text-red-600 text-[24px]  rounded-full bg-white shadow-lg flex items-center justify-center transition-all duration-500 scale-0">
+    <button id="opt3" className={`absolute h-11 w-11 text-[#5B5F77] focus:text-red-600 text-[24px]  rounded-full bg-white shadow-lg flex items-center justify-center transition-all duration-500 scale-0 ${isOpen4 ? '-translate-y-48 scale-100 opacity-100' : 'scale-0 opacity-0 pointer-events-none'}`}>
       <FaCartShopping/>
     </button>
     
     
-    <button id="mainBtn" class="relative z-10 h-11 w-11 bg-[#262626] flex items-center justify-center text-white rounded-full shadow-2xl font-bold transition-transform active:scale-90">
-      <FaPlus/>
+    <button onClick={() => setIsOpen4(!isOpen4)} id="mainBtn" className="relative z-10 h-11 w-11 bg-[#262626] flex items-center justify-center text-white rounded-full shadow-2xl font-bold transition-transform active:scale-90">
+    {isOpen4 ? <FaMinus size={18} /> : <FaPlus size={18} />}
     </button>
     
   </div>
