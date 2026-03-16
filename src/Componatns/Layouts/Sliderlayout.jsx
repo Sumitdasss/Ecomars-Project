@@ -4,6 +4,7 @@ import { FaPlus,FaMinus,FaCodeCompare,FaCartShopping } from "react-icons/fa6";
 import { FaHeart } from "react-icons/fa";
 import React, { useState } from 'react';
 
+
 const Sliderlayout = () => {
 
   const [isOpen1, setIsOpen1] = useState(false);
