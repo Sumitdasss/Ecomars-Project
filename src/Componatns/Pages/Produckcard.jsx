@@ -1,21 +1,21 @@
 import { FaPlus, FaMinus, FaCodeCompare, FaCartShopping } from "react-icons/fa6";
 import { FaHeart } from "react-icons/fa";
 import React, { useState } from 'react';
+import { useCart } from "../../Context/Cartcontext";
 
 export default function Produckcard({ item }) {
+  const { dispatch } = useCart(); // এটি সবার উপরে থাকতে হবে
   const [isOpen1, setIsOpen1] = useState(false);
 
-  if (!item) return null;
+  if (!item) return null; // এর পর কন্ডিশন আসবে
 
+  const addtocart = () => {
+    dispatch({ type: "ADD_TO_CART", payload: item });
+  };
   return (
-    
     <div className="w-[350px] mb-[50px] relative">
-      
-   
       <div className="relative h-[370px] w-full group overflow-hidden">
         <img src={item.img} className='w-full h-full object-cover' alt={item.name} />
-        
-       
         <div className="absolute px-7 py-3 top-[10px] left-[10px] bg-[#262626] text-[16px] font-semibold text-white">
           New
         </div>
@@ -29,7 +29,11 @@ export default function Produckcard({ item }) {
             <FaCodeCompare />
           </button>
           
-          <button className={`absolute h-11 w-11 text-[#5B5F77] focus:text-red-600 text-[24px] rounded-full bg-white shadow-lg flex items-center justify-center transition-all duration-500 ${isOpen1 ? '-translate-y-48 scale-100 opacity-100' : 'scale-0 opacity-0 pointer-events-none'}`}>
+          {/* ২. কার্ট বাটনে addtocart ফাংশনটি যোগ করা হয়েছে */}
+          <button 
+            onClick={addtocart} 
+            className={`absolute h-11 w-11 text-[#5B5F77] focus:text-red-600 text-[24px] rounded-full bg-white shadow-lg flex items-center justify-center transition-all duration-500 ${isOpen1 ? '-translate-y-48 scale-100 opacity-100' : 'scale-0 opacity-0 pointer-events-none'}`}
+          >
             <FaCartShopping />
           </button>
 
@@ -42,7 +46,6 @@ export default function Produckcard({ item }) {
         </div>
       </div>
 
-     
       <div className="mt-5">
         <div className="flex justify-between items-center">
           <h4 className="text-[20px] text-[#262626] font-semibold">{item.name}</h4>
@@ -50,7 +53,7 @@ export default function Produckcard({ item }) {
         </div>
         <p className='text-[17px] text-[#767676] font-medium mt-1'>{item.color}</p>
       </div>
-      
     </div>
   );
 }
+  

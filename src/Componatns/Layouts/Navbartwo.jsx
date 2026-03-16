@@ -1,12 +1,14 @@
-import React from 'react'
+import { useNavigate } from 'react-router-dom';
 import Container from '../Common/Container'
 import Flex from '../Common/Flex'
 import { FaMagnifyingGlass,FaCartShopping } from "react-icons/fa6";
 import { Iconone } from '../Common/Iconone';
 
 import { FaUser,FaSortDown } from "react-icons/fa";
+import { Link } from 'react-router-dom';
 
 const Navbartwo = () => {
+  const navigate = useNavigate();
   return (
    <div className='w-full bg-[#F5F5F3] border-t-2 border-b-2 border-[#767676] '>
     <Container>
@@ -44,7 +46,10 @@ const Navbartwo = () => {
   </ul>
 </div>
 <div className="">
-  <FaCartShopping className='text-[18px] cursor-pointer'/>
+  
+  <button onClick={()=> navigate("/Cart")}><FaCartShopping className='text-[18px] cursor-pointer'/></button>
+ 
+  
 </div>
             </div>
             

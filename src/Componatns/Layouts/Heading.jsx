@@ -4,6 +4,7 @@ import Flex from '../Common/Flex'
 import Image from '../Common/Image'
 import profile from '/src/assets/Logo.png'
 import { Link } from 'react-router-dom'
+import Navbartwo from './Navbartwo'
 
 const Heading = () => {
   return (
@@ -28,8 +29,9 @@ const Heading = () => {
 
 
         </Container>
-
+<Navbartwo/>
     </div>
+    
   )
 }
 

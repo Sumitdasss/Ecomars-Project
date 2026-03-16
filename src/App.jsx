@@ -1,15 +1,15 @@
 
 
+import { Route, Routes } from 'react-router-dom'
 import './App.css'
 
 
-import Heading from './Componatns/Layouts/Heading'
-import { Layoutone } from './Componatns/Layouts/Layoutone'
-import Layouttwo from './Componatns/Layouts/Layouttwo'
-import Navbartwo from './Componatns/Layouts/Navbartwo'
-import Sliderlayout from './Componatns/Layouts/Sliderlayout'
-import Hometwo from './Componatns/Pages/Hometwo'
-import Produckcard from './Componatns/Pages/Produckcard'
+
+
+
+import { Rootlayouts } from './Componatns/Layouts/Rootlayouts'
+import Home from './Componatns/Pages/Home'
+import Cart from './Componatns/Pages/Cart'
 
 
 
@@ -19,17 +19,21 @@ function App() {
 
   return (
    <>
-   <Heading/>
-   <Navbartwo/>
+   {/* <Heading/>
+   
    <Layoutone/>
    <Layouttwo/>
   <Sliderlayout/>
 
-<Hometwo/>
-      
+<Hometwo/> */}
      
-   
-   
+
+  <Routes>
+    <Route path='/' element={<Rootlayouts/>}>
+  <Route index element={<Home />} />
+  <Route path="/Cart" element={<Cart />} /> 
+  </Route>
+</Routes>
    </>
   )
 }
