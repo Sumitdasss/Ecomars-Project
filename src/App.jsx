@@ -2,12 +2,12 @@
 
 import { Route, Routes } from 'react-router-dom'
 import './App.css'
-import Heading from './Componatns/Layouts/Heading'
-import  Layoutone  from './Componatns/Layouts/Layoutone'
+
+import  {Layoutone}  from './Componatns/Layouts/Layoutone'
 import Layouttwo from './Componatns/Layouts/Layouttwo'
 import Sliderlayout from './Componatns/Layouts/Sliderlayout'
 import Hometwo from './Componatns/Hometwo'
-import  Rootlayouts  from './Componatns/Layouts/Rootlayouts'
+import  {Rootlayouts}  from './Componatns/Layouts/Rootlayouts'
 import Home from './Componatns/Pages/Home'
 import Cart from './Componatns/Cart'
 

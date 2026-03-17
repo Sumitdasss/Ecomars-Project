@@ -1,6 +1,7 @@
 import React from 'react'
 
-export const Fotter = () => {
+// eslint-disable-next-line no-undef
+export default Fotter= () => {
   return (
     <div>Fotter</div>
   )
