@@ -47,7 +47,7 @@ const Navbartwo = () => {
 </div>
 <div className="">
   
-  <button onClick={()=> navigate("/Cart")}><FaCartShopping className='text-[18px] cursor-pointer'/></button>
+  <button onClick={()=> navigate("/cart")}><FaCartShopping className='text-[18px] cursor-pointer'/></button>
  
   
 </div>
